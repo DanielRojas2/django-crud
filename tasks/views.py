@@ -42,7 +42,7 @@ def tasks(request):
 @login_required
 def tasks_complete(request):
     task = Tasks.objects.filter(user = request.user, datecompleted__isnull = False,).order_by('-datecompleted')
-    return render(request, 'tasks.html', {'task':task})
+    return render(request, 'task_complete.html', {'task':task})
 
 @login_required
 def create_task(request):
